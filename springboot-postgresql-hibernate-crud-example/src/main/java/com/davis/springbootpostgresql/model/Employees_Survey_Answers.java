@@ -14,12 +14,14 @@ import javax.persistence.Table;
 @Table(name="employees_survey_answers")
 public class Employees_Survey_Answers {
 	
-	@GeneratedValue(strategy=GenerationType.IDENTITY) //generates next number for us for a new record
-	private long id;
+	
+	
 	
 	@Id
-	@Column(name="emp_id") 
-	private long emp_id;
+	@GeneratedValue(strategy=GenerationType.IDENTITY) //generates next number for us for a new record
+	private Long employees_survey_answers_id;
+	
+	
 		
 	@Column(name="question_id")
 	private int question_id;
@@ -27,15 +29,16 @@ public class Employees_Survey_Answers {
 	@Column(name="answer_id")
 	private Double answer_id;
 	
-	@Column(name="employees_survey_answers_id")  
-	private BigInteger employees_survey_answers_id;
 	
-	public Employees_Survey_Answers(Long emp_id, int question_id, Double answer_id, BigInteger employees_survey_answers_id) {
+	@Column(name="emp_id") 
+	private long emp_id;
+	
+	public Employees_Survey_Answers(Long emp_id, int question_id, Double answer_id) {
 		super();
 		this.emp_id = emp_id;
 		this.question_id = question_id;
 		this.answer_id = answer_id;
-		this.employees_survey_answers_id = employees_survey_answers_id;
+		
 		
 }
 
@@ -48,13 +51,7 @@ public class Employees_Survey_Answers {
 		
 	}
 
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
+	
 
 	public long getEmp_id() {
 		return emp_id;
@@ -80,11 +77,11 @@ public class Employees_Survey_Answers {
 		this.answer_id = answer_id;
 	}
 
-	public BigInteger getEmployees_survey_answers_id() {
+	public Long getEmployees_survey_answers_id() {
 		return employees_survey_answers_id;
 	}
 
-	public void setEmployees_survey_answers_id(BigInteger employees_survey_answers_id) {
+	public void setEmployees_survey_answers_id(Long employees_survey_answers_id) {
 		this.employees_survey_answers_id = employees_survey_answers_id;
 	}
 

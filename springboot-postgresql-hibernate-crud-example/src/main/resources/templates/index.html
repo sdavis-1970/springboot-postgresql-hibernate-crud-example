@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-	<div align="center">
-     <h1>Hello World!</h1>
-     </div>	
-</body>
+<html xmlns:th="http://www.thymeLeaf.org">
+     <head>
+         <meta charset="ISO-8859-1">
+         <title>Employee List</title>
+     </head>
+     <body>
+	     <div align="center">
+             <h1>Employee Portal</h1>
+         </div>	
+         <div>
+           <nobr>
+              <a th:href="@{/employees}">Employee List</a>
+           </nobr>
+          
+         </div>
+    </body>
 </html>

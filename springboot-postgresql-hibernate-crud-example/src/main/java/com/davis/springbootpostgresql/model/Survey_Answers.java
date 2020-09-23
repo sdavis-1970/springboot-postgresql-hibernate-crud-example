@@ -13,11 +13,10 @@ import javax.persistence.Table;
 @Table(name="survey_answers")
 public class Survey_Answers {
 	
-	@GeneratedValue(strategy=GenerationType.IDENTITY) //generates next number for us for a new record
-	private long id;
+	
 	
 	@Id
-	@Column(name="answerid") 
+	@GeneratedValue(strategy=GenerationType.IDENTITY) //generates next number for us for a new record
 	private double answerid;
 		
 	@Column(name="question_results")
@@ -38,13 +37,6 @@ public class Survey_Answers {
 		this.question_id = question_id;
 	}
 
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
 
 	public double getAnswerid() {
 		return answerid;

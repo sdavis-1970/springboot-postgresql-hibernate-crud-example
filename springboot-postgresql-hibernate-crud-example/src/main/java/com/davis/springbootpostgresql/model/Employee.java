@@ -1,6 +1,6 @@
 package com.davis.springbootpostgresql.model;
 
-import java.lang.Object;
+
 import java.sql.Date;
 
 import javax.persistence.Column;
@@ -8,18 +8,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue; 
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="employees")
 public class Employee {
 	
-	@GeneratedValue(strategy=GenerationType.IDENTITY) //generates next number for us for a new record
-	private long id;
 	
 	@Id
-	@Column(name="emp_id") 
-	private long emp_id;
+	@GeneratedValue(generator="employees_emp_id_seq", strategy=GenerationType.SEQUENCE)
+	@Column(name="emp_id")
+	private Long emp_id;
 		
 	@Column(name="first_name")
 	private String first_name;
@@ -48,7 +48,7 @@ public class Employee {
 		
 	}
 
-	public long getEmp_Id() {
+	public Long getEmp_Id() {
 		return emp_id;
 	}
 

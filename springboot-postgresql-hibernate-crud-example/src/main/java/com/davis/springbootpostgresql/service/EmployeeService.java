@@ -15,8 +15,8 @@ public class EmployeeService {
 	@Autowired
 	private EmployeeRepository employeeRepository;
 	
-	private boolean existsById(Long id) {
-		return employeeRepository.existsById(id);
+	private boolean existsById(Long emp_id) {
+		return employeeRepository.existsById(emp_id);
 	}
 	
 	public List<Employee> findAll() {

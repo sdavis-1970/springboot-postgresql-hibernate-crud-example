@@ -8,3 +8,4 @@ import com.davis.springbootpostgresql.model.Employee;
 public interface EmployeeRepository extends JpaRepository<Employee, Long>{
 
 }
+
