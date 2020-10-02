@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html> xmlns:th="http://www."thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Insert title here</title>
+		<title>Employee List</title>
 	</head>
 	<body>
 		<h1>Employee List</h1>
+		<div>
+			<nobr>
+				<a th:href="@{/employees/add}">Add Employee</a>
+				<a th:href="@{/}">Back to Index</a>
+			</nobr>
+		</div>
+		<br/><br/>
 		<div>
 			<table border="1">
 				<tr>
@@ -13,14 +20,38 @@
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Email</th>
-				<tr/>
+					<th>Hire Date</th>
+					<th>Pet</th>
+					<th>Employee_Survey_Answers</th>
+					
+					
+				</tr>
 				<tr th:each="employee : ${employees}">
-					<td th:utext= "${employee.emp_id}">...</td>
+					<td th:utext="${employee.id}">...</td>
 					<td th:utext= "${employee.first_name}">...</td>
 					<td th:utext="${employee.last_name}">...</td>
 					<td th:utext= "${employee.email_address}">...</td>
-				</tr>
-			</table>
+					<td th:utext="${employee.hire_date}">...</td>
+					<td>
+						<table>
+							<tr th:each="pet : ${employee.pets}"> <!--should match model name-->
+								<td th:utext="${pet.pet_id}">...</td> <!--columns in table-->
+								<td th:utext="${pet.name}">...</td>
+								<td th:utext="${pet.species}">...</td>
+								<td th:utext="${pet.age}">...</td>
+								<td th:utext="${pet.bites}">...</td>
+								<td>
+							</tr>
+							</table>
+							<tr th:each="employees_survey_answers : ${employee.employees_survey_answers}"> <!--should match model name-->
+								<td th:utext="${employees_survey_answers.question_id}">...</td> <!--columns in table-->
+								<td th:utext="${employees_survey_answers.answer_id}">...</td>
+								<td th:utext="${employees_survey_answers.emp_id}">...</td>
+								
+							</tr>
+								
+							</table>
+			
 		</div>
 
 	</body>

@@ -2,12 +2,17 @@ package com.davis.springbootpostgresql.model;
 
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue; 
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -15,11 +20,14 @@ import javax.persistence.Table;
 @Table(name="employees")
 public class Employee {
 	
-	
 	@Id
-	@GeneratedValue(generator="employees_emp_id_seq", strategy=GenerationType.SEQUENCE)
-	@Column(name="emp_id")
-	private Long emp_id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	//@Id
+	//@GeneratedValue(generator="employees_emp_id_seq", strategy=GenerationType.SEQUENCE)
+	//@Column(name="emp_id")
+	//private Long emp_id;
 		
 	@Column(name="first_name")
 	private String first_name;
@@ -36,10 +44,15 @@ public class Employee {
 	@Column(name="hire_date")
 	private Date hire_date;
 	
+	@OneToMany(mappedBy="employee", cascade=CascadeType.ALL, fetch=FetchType.EAGER, targetEntity=Pet.class)
+	private List<Pet> pets;
+	
+	@OneToMany(mappedBy="employee", cascade=CascadeType.ALL, fetch=FetchType.EAGER, targetEntity=Employees_Survey_Answers.class)
+	private List<Employees_Survey_Answers> employees_survey_answers;
 
 	public Employee(Long emp_id, String first_name, String last_name, String title, String email_address, Date hire_date) {
 		super();
-		this.emp_id = emp_id;
+		this.id = id;
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.title = title;
@@ -48,8 +61,16 @@ public class Employee {
 		
 	}
 
-	public Long getEmp_Id() {
-		return emp_id;
+	public List<Employees_Survey_Answers> getEmployees_survey_answers() {
+		return employees_survey_answers;
+	}
+
+	public void setEmployees_survey_answers(List<Employees_Survey_Answers> employees_survey_answers) {
+		this.employees_survey_answers = employees_survey_answers;
+	}
+
+	public Long getId() {
+		return id;
 	}
 
 	public Employee() {
@@ -57,8 +78,8 @@ public class Employee {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void setEmp_Id(long emp_id) {
-		this.emp_id = emp_id;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getFirst_name() {
@@ -88,11 +109,30 @@ public class Employee {
     public Date getHire_date() {
 	return hire_date;
     }
-
     public void setHire_date(Date hire_date) {
-	this.hire_date = hire_date;
+    	this.hire_date = hire_date;
+    	}
+
+	public String getTitle() {
+		return title;
 	}
-	
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public List<Pet> getPets() {
+		if(this.pets == null) {
+			this.pets = new ArrayList<Pet>();
+		}
+		return this.pets;
+	}
+
+	public void setPets(List<Pet> pets) {
+		this.pets = pets;
+	}
+
+
 	
 
 }

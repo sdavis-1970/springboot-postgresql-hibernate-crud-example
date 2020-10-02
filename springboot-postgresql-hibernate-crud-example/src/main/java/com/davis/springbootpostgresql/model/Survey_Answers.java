@@ -1,6 +1,7 @@
 package com.davis.springbootpostgresql.model;
 
 import java.math.BigInteger;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -60,6 +61,11 @@ public class Survey_Answers {
 
 	public void setQuestion_id(int question_id) {
 		this.question_id = question_id;
+	}
+
+	public List<Survey_Answers> findAll() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

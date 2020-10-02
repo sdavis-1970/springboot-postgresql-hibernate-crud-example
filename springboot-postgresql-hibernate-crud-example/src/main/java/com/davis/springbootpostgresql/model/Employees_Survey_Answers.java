@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -30,12 +32,14 @@ public class Employees_Survey_Answers {
 	private Double answer_id;
 	
 	
-	@Column(name="emp_id") 
-	private long emp_id;
+		
+	@ManyToOne
+	@JoinColumn(name="emp_id")
+	private Employee employee;
 	
-	public Employees_Survey_Answers(Long emp_id, int question_id, Double answer_id) {
+	public Employees_Survey_Answers(int question_id, Double answer_id) {
 		super();
-		this.emp_id = emp_id;
+		
 		this.question_id = question_id;
 		this.answer_id = answer_id;
 		
@@ -53,13 +57,7 @@ public class Employees_Survey_Answers {
 
 	
 
-	public long getEmp_id() {
-		return emp_id;
-	}
 
-	public void setEmp_id(long emp_id) {
-		this.emp_id = emp_id;
-	}
 
 	public int getQuestion_id() {
 		return question_id;

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 
 import com.davis.springbootpostgresql.model.Employee;
-import com.davis.springbootpostgresql.repository.EmployeeRepository;
 import com.davis.springbootpostgresql.service.EmployeeService;
 
 
