@@ -23,6 +23,15 @@ public class EmployeeService {
 		List<Employee> employees = employeeRepository.findAll();
 		return employees;
 	}
+	
+	public Employee findById(Long id) throws Exception {
+		Employee employee = employeeRepository.findById(id).orElse(null);
+		if(employee == null) {
+			throw new Exception("Cannot find Employee with id: " + id);
+		}
+		else
+			return employee;
+	}
 
 }
 
