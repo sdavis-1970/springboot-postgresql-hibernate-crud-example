@@ -10,6 +10,7 @@
 			<nobr>
 				<a th:href="@{/employees/add}">Add Employee</a>
 				<a th:href="@{/}">Back to Index</a>
+				<a th:href="@{/employees_survey_answers}">Employees Surveys Answers</a>
 			</nobr>
 		</div>
 		<br/><br/>
@@ -21,8 +22,8 @@
 					<th>Last Name</th>
 					<th>Email</th>
 					<th>Hire Date</th>
-					<th>Pet</th>
-					<th>Employee_Survey_Answers</th>
+					
+					
 					
 					
 				</tr>
@@ -32,25 +33,10 @@
 					<td th:utext="${employee.last_name}">...</td>
 					<td th:utext= "${employee.email_address}">...</td>
 					<td th:utext="${employee.hire_date}">...</td>
-					<td>
-						<table>
-							<tr th:each="pet : ${employee.pets}"> <!--should match model name-->
-								<td th:utext="${pet.pet_id}">...</td> <!--columns in table-->
-								<td th:utext="${pet.name}">...</td>
-								<td th:utext="${pet.species}">...</td>
-								<td th:utext="${pet.age}">...</td>
-								<td th:utext="${pet.bites}">...</td>
-								<td>
-							</tr>
+					
+				</tr>	
 							</table>
-							<tr th:each="employees_survey_answers : ${employee.employees_survey_answers}"> <!--should match model name-->
-								<td th:utext="${employees_survey_answers.question_id}">...</td> <!--columns in table-->
-								<td th:utext="${employees_survey_answers.answer_id}">...</td>
-								<td th:utext="${employees_survey_answers.emp_id}">...</td>
-								
-							</tr>
-								
-							</table>
+
 			
 		</div>
 

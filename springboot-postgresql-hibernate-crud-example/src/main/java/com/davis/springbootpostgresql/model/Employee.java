@@ -16,6 +16,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import BAK.Pet;
+
 @Entity
 @Table(name="employees")
 public class Employee {
@@ -25,9 +27,9 @@ public class Employee {
 	private Long id;
 
 	//@Id
-	//@GeneratedValue(generator="employees_emp_id_seq", strategy=GenerationType.SEQUENCE)
-	//@Column(name="emp_id")
-	//private Long emp_id;
+	//@GeneratedValue(generator="employees_id_seq", strategy=GenerationType.SEQUENCE)
+	//@Column(name="id")
+	//private Long id;
 		
 	@Column(name="first_name")
 	private String first_name;
@@ -44,29 +46,29 @@ public class Employee {
 	@Column(name="hire_date")
 	private Date hire_date;
 	
-	@OneToMany(mappedBy="employee", cascade=CascadeType.ALL, fetch=FetchType.EAGER, targetEntity=Pet.class)
-	private List<Pet> pets;
+	//@OneToMany(mappedBy="employee", cascade=CascadeType.ALL, fetch=FetchType.EAGER, targetEntity=Pet.class)
+	//private List<Pet> pets;
 	
-	@OneToMany(mappedBy="employee", cascade=CascadeType.ALL, fetch=FetchType.EAGER, targetEntity=Employees_Survey_Answers.class)
-	private List<Employees_Survey_Answers> employees_survey_answers;
+	//@OneToMany(mappedBy="employee", cascade=CascadeType.ALL, fetch=FetchType.EAGER, targetEntity=Employees_Survey_Answers.class)
+	//private List<Employees_Survey_Answers> employees_survey_answers;
 
-	public Employee(Long emp_id, String first_name, String last_name, String title, String email_address, Date hire_date) {
+	public Employee(Long id, String first_name, String last_name, String title, String email_address, Date hire_date) {
 		super();
-		this.id = id;
+		//this.id = id;
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.title = title;
 		this.email_address = email_address;
 		this.hire_date = hire_date;
 		
-	}
+	//}
 
-	public List<Employees_Survey_Answers> getEmployees_survey_answers() {
-		return employees_survey_answers;
-	}
+	//public List<Employees_Survey_Answers> getEmployees_survey_answers() {
+		//return employees_survey_answers;
+	//}
 
-	public void setEmployees_survey_answers(List<Employees_Survey_Answers> employees_survey_answers) {
-		this.employees_survey_answers = employees_survey_answers;
+	//public void setEmployees_survey_answers(List<Employees_Survey_Answers> employees_survey_answers) {
+		//this.employees_survey_answers = employees_survey_answers;
 	}
 
 	public Long getId() {
@@ -119,17 +121,17 @@ public class Employee {
 
 	public void setTitle(String title) {
 		this.title = title;
-	}
+	//}
 
-	public List<Pet> getPets() {
-		if(this.pets == null) {
-			this.pets = new ArrayList<Pet>();
-		}
-		return this.pets;
-	}
+	//public List<Pet> getPets() {
+		//if(this.pets == null) {
+			//this.pets = new ArrayList<Pet>();
+		//}
+		//return this.pets;
+	//}
 
-	public void setPets(List<Pet> pets) {
-		this.pets = pets;
+	//public void setPets(List<Pet> pets) {
+		//this.pets = pets;
 	}
 
 

@@ -10,7 +10,7 @@
         <a th:href="@{/employees}">Back to Employee List</a>
         <br/><br/>
         <div th:if="${employee}">
-            <table border="0">
+            <table border="1">
                 <tr>
                     <td>ID</td>
                     <td>:</td>
@@ -44,5 +44,3 @@
         <div th:if="${errorMessage}" th:utext="${errorMessage}" class="error" />        
     </body>
 </html>
-
-Press Shift + Tab to navigate to chat history.

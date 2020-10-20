@@ -1,4 +1,4 @@
-package com.davis.springbootpostgresql.service;
+package BAK;
 
 import java.util.List;
 
@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import com.davis.springbootpostgresql.model.Pet;
 
 @Controller
 public class PetController {

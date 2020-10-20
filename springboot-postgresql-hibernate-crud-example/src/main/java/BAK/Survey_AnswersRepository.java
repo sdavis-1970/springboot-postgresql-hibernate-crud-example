@@ -1,9 +1,6 @@
-package com.davis.springbootpostgresql.repository;
+package BAK;
 
 import org.springframework.stereotype.Repository;
-
-import com.davis.springbootpostgresql.model.Survey_Answers;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository

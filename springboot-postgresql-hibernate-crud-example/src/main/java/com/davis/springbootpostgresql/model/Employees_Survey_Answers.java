@@ -33,9 +33,9 @@ public class Employees_Survey_Answers {
 	
 	
 		
-	@ManyToOne
-	@JoinColumn(name="emp_id")
-	private Employee employee;
+//	@ManyToOne
+//	@JoinColumn(name="emp_id")
+//	private Employee employee;
 	
 	public Employees_Survey_Answers(int question_id, Double answer_id) {
 		super();

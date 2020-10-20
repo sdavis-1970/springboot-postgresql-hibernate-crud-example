@@ -1,12 +1,9 @@
-package com.davis.springbootpostgresql.service;
+package BAK;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.davis.springbootpostgresql.model.Pet;
-import com.davis.springbootpostgresql.repository.PetRepository;
 
 @Service
 public class PetService {

@@ -22,11 +22,11 @@ public class Employees_Survey_AnswersController {
 	 
   //}
 	
-@GetMapping("/employees_Survey_Answers")
+@GetMapping("/employees_survey_answers")
 public String getEmployees_Survey_Answers(Model model) {
-	List<Employees_Survey_Answers> employees_Survey_Answers = employees_Survey_AnswersService.findAll();
-	model.addAttribute("employees_Survey_Answers", employees_Survey_Answers); //shows what UI will display
-	return "employees_Survey_Answers";
+	List<Employees_Survey_Answers> employees_survey_answers = employees_Survey_AnswersService.findAll();
+	model.addAttribute("employees_survey_answers", employees_survey_answers); //shows what UI will display
+	return "employees_survey_answers";
 	
 }
 

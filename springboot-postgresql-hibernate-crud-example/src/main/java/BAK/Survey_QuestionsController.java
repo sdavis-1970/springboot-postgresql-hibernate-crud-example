@@ -1,11 +1,8 @@
-package com.davis.springbootpostgresql.controller;
+package BAK;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import com.davis.springbootpostgresql.model.Survey_Questions;
-import com.davis.springbootpostgresql.service.Survey_QuestionsService;
 
 import java.util.List;
 

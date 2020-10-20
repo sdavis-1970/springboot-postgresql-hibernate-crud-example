@@ -1,4 +1,4 @@
-package com.davis.springbootpostgresql.model;
+package BAK;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import com.davis.springbootpostgresql.model.Employee;
 
 @Entity
 @Table(name="pets")
